@@ -3,8 +3,7 @@ mod middleware;
 
 use std::{net::SocketAddr, time::Duration};
 
-pub use axum::Router;
-use axum::Server;
+use axum::{Router, Server};
 use middleware::{DefaultMakeSpan, DefaultOnRequest, DefaultOnResponse};
 use tower::ServiceBuilder;
 use tower_http::{
