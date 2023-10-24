@@ -1,7 +1,6 @@
-use std::net::{SocketAddr, TcpListener};
+use std::net::SocketAddr;
 
-use axum::{debug_handler, http::StatusCode, response::IntoResponse, routing::get, Json, Router};
-use serde::Serialize;
+use axum::{http::StatusCode, routing::get, Router};
 
 pub(crate) fn create() -> SocketAddr {
     server_testing::create_test_server(app())
