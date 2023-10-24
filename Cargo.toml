@@ -1,0 +1,17 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.6.20", features = ["macros"] }
+tower = { version = "0.4.13", features = ["filter", "util"] }
+tower-http = { version = "0.4.4", features = ["compression-gzip", "map-response-body", "request-id", "timeout", "trace", "util", "validate-request"] }
+tracing = "0.1.40"
+serde = { version = "1.0.189", features = ["derive"] }
+uuid = { version = "1.5.0", features = ["v4"] }
+
+[dev-dependencies]
+hyper = { version = "0.14.27", features = ["client"] }
+server-testing = { git = "https://github.com/connorwyatt/rust-server-testing-lib.git", package = "server-testing", rev = "2089acc7" }
+tokio = { version = "1.33.0", features = ["macros"] }
