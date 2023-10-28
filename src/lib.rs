@@ -17,7 +17,7 @@ pub async fn start(router: Router, port: u16) {
     let server = Server::bind(&SocketAddr::from(([127, 0, 0, 1], port)))
         .serve(create_router(router).into_make_service());
 
-    tracing::debug!("listening on {}", server.local_addr());
+    tracing::info!("listening on {}", server.local_addr());
 
     server.await.unwrap();
 }
